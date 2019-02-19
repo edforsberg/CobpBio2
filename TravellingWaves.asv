@@ -1,0 +1,8 @@
+%Problem 1, Travelling waves
+
+t = 100; 
+I = zeros(100,1); 
+S = zeros(100,1); 
+
+heatMap = zeros(100,100)
+for i = 1
