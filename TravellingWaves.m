@@ -3,15 +3,15 @@ a = 0.1;
 b = 1; 
 c = 0.5; 
 K = 30; 
-D =0; 
+D = 1; 
 
-t = 100; 
+t = 150; 
 x = 100; 
 dt = 1; 
 I = zeros(x,1); 
 S = zeros(x,1); 
-S(round(x/2)) = 0.1;%b/a+0.1; 
-I(round(x/2)) = 0.1;%K*(b-c)-b/a+0.1;
+S(20) = 10; 
+I(20) = 5;
 
 sProg = zeros(x,t); 
 for i = 1:t
@@ -23,6 +23,6 @@ for i = 1:t
     S = nextS; 
     I = nextI;    
 end
-surf(1:t,1:x,sProg)
+surf(1:t,1:x,sProg, 'EdgeColor','none','LineStyle','none','FaceLighting','phong')
 %contour(sProg);
 
