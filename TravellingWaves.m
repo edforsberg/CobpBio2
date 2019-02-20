@@ -1,18 +1,23 @@
 %Problem 1, Travelling waves
+a = 0.1; 
+b = 1; 
+c = 0.5; 
+K = 30; 
+D =0; 
 
 t = 100; 
-x = 20; 
-dt = 0.1; 
+x = 100; 
+dt = 1; 
 I = zeros(x,1); 
 S = zeros(x,1); 
-S(round(x/2)) = 5; 
-I(round(x/2)) = 5;
+S(round(x/2)) = 0.1;%b/a+0.1; 
+I(round(x/2)) = 0.1;%K*(b-c)-b/a+0.1;
 
 sProg = zeros(x,t); 
 for i = 1:t
     sProg(:,i) = S; 
-    nextS = SusceptibleProgression(I,S,dt); 
-    nextI = InfectedProgression(I,S,dt); 
+    nextS = SusceptibleProgression(a,b,c,K,D,I,S,dt); 
+    nextI = InfectedProgression(a,c,K,D,I,S,dt); 
     nextS(nextS<0) = 0; 
     nextI(nextI<0) = 0;
     S = nextS; 
