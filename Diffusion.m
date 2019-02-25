@@ -7,9 +7,9 @@ function nextPopulation = Diffusion(population)
 %         nextPopulation(i) = population(mod(i,N)+1) - 2*population(i) + population(mod(i,N)+1);
 %     end
 
-    population = [population(end-2); population(end-1); population; population(1); population(2)];
+    population = [population(end); population; population(1)];
     nextPopulation = del2(population);
     
-    nextPopulation = nextPopulation(3:102);
+    nextPopulation = nextPopulation(2:101);
     
 end

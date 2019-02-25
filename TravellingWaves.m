@@ -10,12 +10,12 @@ x = 100;
 dt = 1; 
 I = zeros(x,1); 
 S = zeros(x,1); 
-S(20) = 10; 
-I(20) = 5;
+S(1) = 10; 
+I(1) = 5;
 
 sProg = zeros(x,t); 
 for i = 1:t
-    sProg(:,i) = S; 
+    sProg(:,i) = I; 
     nextS = SusceptibleProgression(a,b,c,K,D,I,S,dt); 
     nextI = InfectedProgression(a,c,K,D,I,S,dt); 
     nextS(nextS<0) = 0; 
@@ -24,5 +24,10 @@ for i = 1:t
     I = nextI;    
 end
 surf(1:t,1:x,sProg, 'EdgeColor','none','LineStyle','none','FaceLighting','phong')
+xlabel('t')
+ylabel('x')
+zlabel('Population')
+colorbar
+title('Population progression')
 %contour(sProg);
 
