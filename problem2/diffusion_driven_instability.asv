@@ -1,0 +1,17 @@
+L = 128;
+a = 3;
+b = 8;
+latice = zeros(L,L);
+u = a;
+v = b/a;
+timeSteps = 1000; 
+snapShot =  500; 
+
+
+for i = 1:timeSteps 
+    if(i == snapshot) 
+        snapframe = u; 
+    end
+    nextU = du(
+    
+end
