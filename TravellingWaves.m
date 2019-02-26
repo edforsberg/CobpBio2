@@ -26,8 +26,8 @@ end
 surf(1:t,1:x,sProg, 'EdgeColor','none','LineStyle','none','FaceLighting','phong')
 xlabel('t')
 ylabel('x')
-zlabel('Population')
+zlabel('Infectives')
 colorbar
-title('Population progression')
+title('Infective progression')
 %contour(sProg);
 
