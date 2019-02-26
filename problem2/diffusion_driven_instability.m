@@ -8,12 +8,12 @@ latice = zeros(L,L);
 u = a;
 v = b/a;
 timeSteps = 1000; 
-snapShot =  500; 
+snapFrame =  500; 
 
 
 for i = 1:timeSteps 
-    if(i == snapShot) 
-        snapframe = u; 
+    if(i == snapFrame) 
+        snapShot = u; 
     end
     nextU = du(u,v,a,b,Du,dt); 
     nextV = dv(u,v,b,Dv,dt); 
@@ -21,4 +21,4 @@ for i = 1:timeSteps
     v = nextV;    
 end
 
-surf(snapframe); 
+surf(snapShot); 
